@@ -173,6 +173,22 @@ Compuestas por ecuaciones matemáticas que describen líneas, curvas y polígono
 
 ***SVG (Scalable Vector Graphics):*** Esta basado en XML, es ecalable sin pérdida de calidad y compatible con navegadores web.
 ## 1.6. Procesamiento de mapas de bits.
+manipulación matemática de una imagen digital formada por píxeles, con el objetivo de mejorarla, analizarla o transformarla.
+
+Una imagen digital raster puede representarse como una función: 
+*I(x,y)*
+
+Donde:
+* **x** = coordenada horizontal
+* **y** = coordenada vertical
+* **I** = intensidad o valor de color del píxel
+
+***📌 1. Tipos de procesamiento***
+* **Procesamiento puntual:** Se modifica cada píxel de forma independiente.
+* **Procesamiento espacial:** El nuevo valor del píxel depende de los píxeles vecinos.
+* **Transformaciones geométricas:** Las transformaciones geométricas modifican la posición, orientación o tamaño de una imagen sin alterar directamente los valores de color de los píxeles.
+* **Segmentación de imágenes:** Dividir una imagen en regiones o áreas con características similares, como color, textura o intensidad.
+* **Detección de bordes:** Identifica cambios bruscos de intensidad en una imagen. Los bordes representan los límites de los objetos.
 # Bibliografía
 * (N.d.). Wordpress.com. Retrieved February 23, 2026, from https://ingenieriayeducacion.wordpress.com/wp-content/uploads/2013/12/graficosporcomputadorayopengl.pdf
 * La graficación, ___________________________________________________________________ Lección 1. 1-Breve Historia Dde. (n.d.). UNIDAD I.- INTRODUCCIÓN A LA GRAFICACIÓN POR COMPUTADORA. Wordpress.com. Retrieved February 23, 2026, from https://iscitver2011.wordpress.com/wp-content/uploads/2011/02/1-1breve-historia-de-la-graficacion.pdf
