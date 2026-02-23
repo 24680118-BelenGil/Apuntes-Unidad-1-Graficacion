@@ -79,15 +79,39 @@ color blanco en (0, 0, 0) al moverse a lo largo de los ejes.
 
 Se utilizan 8-bits por componente, por lo que cada uno puede representar hasta 256 valores diferentes. 
 ### CMY [Cyan, Magenta, Yellow]
+Es un modelo sustractivo, utilizado principalmente en impresión. Utiliza los tres colores primarios cian, magenta y amarillo.
+* **Cian:** Puede describirse como una combinación de verde y azul, cuando se refleja la luz, este absorbe el componente rojo y refleja el verde y azul.
+* **Magenta:** Esta resta la componente verde de la luz incidente.
+* **Amarillo:** Resta la componente azul.
+
+En el modelo CMY, la posición espacial (I, I, 1 ) representa el negro, se restan todos los componentes de la luz incidente, el (0, 0, 0) origen representa la luz blanca. Si se utilizan cantidades iguales de cada uno de los colores primarios, se obtienen las sombras de gris, situadas a lo largo de la diagonal principal del cubo.
+Una combinación de cian y magenta produce luz azul, porque las componentes roja y verde de la luz incidente se absorven. De forma similar, una combinación de tinta cian y amarilla produce luz verde, mientras que una combinación de tinta magenta y amarilla nos da la luz roja. 
+<img width="265" height="250" alt="image" src="https://github.com/user-attachments/assets/619e0f2e-bc38-4ff3-b1be-54645ce95646" />
+
 ### HSV [Hue, Saturation, Value]
 Basado en el sistema de color de Munsell, el cual intenta acercarse más a la manera en la que percibimos los atributos de los colores. Su espacio de color es modelado con un cono o una pirámide hexagonal inversa, y como su nombre lo indica, está definido por sus componentes:
-* **H (Tono):** Es un ángulo entre 0° y 360° , donde cada valor corresponde a un color “puro” (en el espectro visible) o pigmento en la circunferencia delmodelo. Empezando con el color rojo en 0° y el verde en 120°.
+* **H (Tono):** Es un ángulo entre 0° y 360° , donde cada valor corresponde a un color “puro” (en el espectro visible) o pigmento en la circunferencia del modelo. Empezando con el color rojo en 0° y el verde en 120°.
 * **S (Saturación):** Se relaciona con la pureza o intensidad del color, es decir, qué tanto vamos a diluir o rebajar el pigmento con un tono entre los colores blanco y negro, definido por el último componente. Donde 1 es el color puro y 0 es el tono en *V*, correspondiendo a el radio del cilindro.
 * **V (Value):** Donde 0 es el color negro y 1 el blanco, haciendo referencia al factor de brillo, correspondiendo al eje del modelo.
 <img width="504" height="361" alt="Captura de pantalla 2026-02-23 133317" src="https://github.com/user-attachments/assets/20db8eee-b23e-415c-af8e-ea7b784296d2" />
 
 ### HSL [Hue, Saturation, Lightness]
+Basado en parámetros intuitivos de color es el sistema utilizado por Tektronix Corporation. Este espacio de color tiene la representación de doble cono sus tres parámetros se denominan: 
+* **Tono (H):** Es un ángulo entre 0° y 360° , donde cada valor corresponde a un color “puro” o pigmento en la circunferencia del modelo. El magenta estará a 60°. el rojo a 120° y el cian a 180". Los colores complementarios estarán separados 180° en este doble cono. 
+* **Saturación (S):** Especifica la pureza de un color. Este parámetro varía entre 0 y 1.0
+y los colores puros son aquellos para los que .V = 1.0 y L = 0.5. A medida que S disminuye, se añade más blanco a un color. La escala de grises se encuentra en S = 0. 
+* **Claridad (L):** El eje vertical en este modelo se denomina claridad, L. Para L = 0, tendremos el negro, mientras que el blanco se encontrará en L = 1.0. Los valores de escala de grises se encuentran a lo largo del eje L y los colores puros están en el plano L - 0.5. 
+
+<img width="396" height="572" alt="Captura de pantalla 2026-02-23 140857" src="https://github.com/user-attachments/assets/c006ecef-c17a-4fb7-bff6-ab0afdeb6391" />
+
 ## 1.5. Representación y trazo de líneas y polígonos
 ### 1.5.1 Formatos de imagen
 ## 1.6. Procesamiento de mapas de bits.
 # Bibliografía
+* (N.d.). Wordpress.com. Retrieved February 23, 2026, from https://ingenieriayeducacion.wordpress.com/wp-content/uploads/2013/12/graficosporcomputadorayopengl.pdf
+* La graficación, ___________________________________________________________________ Lección 1. 1-Breve Historia Dde. (n.d.). UNIDAD I.- INTRODUCCIÓN A LA GRAFICACIÓN POR COMPUTADORA. Wordpress.com. Retrieved February 23, 2026, from https://iscitver2011.wordpress.com/wp-content/uploads/2011/02/1-1breve-historia-de-la-graficacion.pdf
+* (N.d.). Wdfiles.com. Retrieved February 23, 2026, from https://aliamondano-eo.wdfiles.com/local--files/libro-graficos-1-0/graficos-1.0.pdf
+* (N.d.-b). Proyectodescartes.org. Retrieved February 23, 2026, from https://proyectodescartes.org/iCartesiLibri/PDF/GraficacionComputadora.pdf
+
+
+
