@@ -75,6 +75,7 @@ Los modelos de color son sistemas matemáticos que permiten representar los colo
 Conocido como Additive Color Model o modelo natural, combinan las intensidades de los tres colores primarios (Rojo, Verde y Azul), para obtener un color. Su espacio de color puede ser representado por el cubo unitario [0, 1] × [0, 1] × [0, 1], asignandose el color negro al
 origen (0, 0, 0), y conforme la intensidad de los colores incremente se llega al
 color blanco en (0, 0, 0) al moverse a lo largo de los ejes.
+
 <img width="455" height="332" alt="Captura de pantalla 2026-02-23 130221" src="https://github.com/user-attachments/assets/e166da72-2ea4-4144-8925-fb4dc723515e" />
 
 Se utilizan 8-bits por componente, por lo que cada uno puede representar hasta 256 valores diferentes. 
@@ -86,6 +87,7 @@ Es un modelo sustractivo, utilizado principalmente en impresión. Utiliza los tr
 
 En el modelo CMY, la posición espacial (I, I, 1 ) representa el negro, se restan todos los componentes de la luz incidente, el (0, 0, 0) origen representa la luz blanca. Si se utilizan cantidades iguales de cada uno de los colores primarios, se obtienen las sombras de gris, situadas a lo largo de la diagonal principal del cubo.
 Una combinación de cian y magenta produce luz azul, porque las componentes roja y verde de la luz incidente se absorven. De forma similar, una combinación de tinta cian y amarilla produce luz verde, mientras que una combinación de tinta magenta y amarilla nos da la luz roja. 
+
 <img width="265" height="250" alt="image" src="https://github.com/user-attachments/assets/619e0f2e-bc38-4ff3-b1be-54645ce95646" />
 
 ### HSV [Hue, Saturation, Value]
@@ -93,6 +95,7 @@ Basado en el sistema de color de Munsell, el cual intenta acercarse más a la ma
 * **H (Tono):** Es un ángulo entre 0° y 360° , donde cada valor corresponde a un color “puro” (en el espectro visible) o pigmento en la circunferencia del modelo. Empezando con el color rojo en 0° y el verde en 120°.
 * **S (Saturación):** Se relaciona con la pureza o intensidad del color, es decir, qué tanto vamos a diluir o rebajar el pigmento con un tono entre los colores blanco y negro, definido por el último componente. Donde 1 es el color puro y 0 es el tono en *V*, correspondiendo a el radio del cilindro.
 * **V (Value):** Donde 0 es el color negro y 1 el blanco, haciendo referencia al factor de brillo, correspondiendo al eje del modelo.
+  
 <img width="504" height="361" alt="Captura de pantalla 2026-02-23 133317" src="https://github.com/user-attachments/assets/20db8eee-b23e-415c-af8e-ea7b784296d2" />
 
 ### HSL [Hue, Saturation, Lightness]
@@ -105,7 +108,70 @@ y los colores puros son aquellos para los que .V = 1.0 y L = 0.5. A medida que S
 <img width="396" height="572" alt="Captura de pantalla 2026-02-23 140857" src="https://github.com/user-attachments/assets/c006ecef-c17a-4fb7-bff6-ab0afdeb6391" />
 
 ## 1.5. Representación y trazo de líneas y polígonos
+En la graficación por computadora, las imágenes se construyen a partir de primitivas geométricas básicas, principalmente puntos, líneas y polígonos. Estas primitivas son la base para generar figuras más complejas en gráficos 2D y 3D.
+### *Representación de líneas*
+Una línea en matemáticas es una sucesión infinita de puntos, pero en gráficos por computadora se representa mediante una secuencia discreta de píxeles en una pantalla.
+
+Su representación matemática es *y = mx + b*.
+
+Donde *m* es la pendiente y *b* la intersección con el eje Y.
+
+Para dibujar líneas eficientemente se emplean algoritmos específicos:
+
+**1. Algoritmo DDA (Digital Differential Analyzer)**
+* Calcula incrementos pequeños en X y Y.
+* Es sencillo pero puede presentar errores acumulativos por redondeo.
+  
+**2. Algoritmo de Bresenham**
+* Utiliza únicamente operaciones enteras.
+* Es más rápido y preciso.
+* Determina qué píxel encender en cada paso.
+  
+### *Representación de polígonos*
+Un polígono es una figura plana formada por segmentos de línea que conectan varios vértices.
+
+Su definición matemática es *P = {(X1,Y1), (X2,Y2),...,(Xn,Yn)}*
+
+Cada par de puntos consecutivos forma un lado del polígono.
+
+**Tipos de polígonos en gráficos**
+* **Convexos:** Todos sus ángulos internos son menores a 180°.
+* **Cóncavos:** Tienen al menos un ángulo interno mayor a 180°.
+* **Regulares:** Todos sus lados y ángulos son iguales.
+  
+**Relleno de polígonos**
+* **Scan-line (línea de barrido):** Rellena el polígono línea por línea.
+* **Flood Fill:** Rellena desde un punto interior hasta alcanzar los bordes.
+  
 ### 1.5.1 Formatos de imagen
+Los formatos de imagen son estructuras digitales que permiten almacenar, organizar y codificar información gráfica dentro de un archivo. Estos formatos determinan cómo se guardan los píxeles, el tipo de compresión utilizada, la profundidad de color y la calidad final de la imagen.
+
+***📌 1. Formatos Raster (Mapa de Bits)***
+Una imagen raster está formada por una matriz de píxeles organizada en filas y columnas. Cada píxel contiene información de color.
+
+Matemáticamente se representa como: *I(x,y) = (R, G, B)*
+
+Estas dependen de la resolución, pierden calidad al ampliarse pero son ideales para fotografías.
+
+*Principales formatos*
+
+**BMP (Bitmap):** No utiliza compresión por lo que conserva toda la información original, pero sus archivos son de gran tamaño.
+
+**JPEG (Joint Photographic Experts Group):** Reduce el tamaño eliminando infromación poco importante, es ideal para forografías digitales.
+
+**PNG (Portable Network Graphics):** A diferencia de JPEG, usa compresion pero no elimina información de la imagen, permite transparencias y es excelente para gráficos, logotipos e imágenes web.
+
+**GIF (Graphics Interchange Format):** Soporta animaciones pero se limita a 256 colores, es ideal para íconos y animaciones.
+
+**TIFF (Tagged Image File Format):** Usa compresión sin perdida y de alta calidad.
+
+***📌 2. Formatos Vectoriales***
+
+Compuestas por ecuaciones matemáticas que describen líneas, curvas y polígonos, no pierden calidad al escalarse, su tamaño es menor y son ideales para logotipos, planos y diseño técnico.
+
+*Formato principal*
+
+***SVG (Scalable Vector Graphics):*** Esta basado en XML, es ecalable sin pérdida de calidad y compatible con navegadores web.
 ## 1.6. Procesamiento de mapas de bits.
 # Bibliografía
 * (N.d.). Wordpress.com. Retrieved February 23, 2026, from https://ingenieriayeducacion.wordpress.com/wp-content/uploads/2013/12/graficosporcomputadorayopengl.pdf
