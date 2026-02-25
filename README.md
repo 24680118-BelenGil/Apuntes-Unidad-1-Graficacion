@@ -142,7 +142,18 @@ Cada par de puntos consecutivos forma un lado del polígono.
 **Relleno de polígonos**
 * **Scan-line (línea de barrido):** Rellena el polígono línea por línea.
 * **Flood Fill:** Rellena desde un punto interior hasta alcanzar los bordes.
-  
+
+**Practicas**
+Los siguientes links muestran practicas para reforzar el trazo de líneas y polígonos.
+
+***Polígono 2D***
+
+https://github.com/24680118-BelenGil/Practica-1-Pol-gono-.git
+
+***Flor de vidad***
+
+https://github.com/24680118-BelenGil/Practica-2.Graficaci-n.git
+
 ### 1.5.1 Formatos de imagen
 Los formatos de imagen son estructuras digitales que permiten almacenar, organizar y codificar información gráfica dentro de un archivo. Estos formatos determinan cómo se guardan los píxeles, el tipo de compresión utilizada, la profundidad de color y la calidad final de la imagen.
 
