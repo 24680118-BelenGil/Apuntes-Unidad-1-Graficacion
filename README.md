@@ -144,6 +144,7 @@ Cada par de puntos consecutivos forma un lado del polígono.
 * **Flood Fill:** Rellena desde un punto interior hasta alcanzar los bordes.
 
 **Practicas**
+
 Los siguientes links muestran practicas para reforzar el trazo de líneas y polígonos.
 
 ***Polígono 2D***
@@ -302,6 +303,9 @@ Las curvas de Bézier pueden ser lineales, cuadráticas o cúbicas, dependiendo 
 ### 2.3.2. B-spline.
 Las curvas B-Spline son una generalización de las curvas de Bézier y ofrecen mayor flexibilidad y control. Una de sus principales ventajas es el control local, lo que significa que modificar un punto de control solo afecta una parte de la curva, en lugar de toda la forma.
 
+El siguiente enlace muestra la práctica para reforzar lo aprendido.
+
+https://github.com/24680118-BelenGil/ProyectoIntegradorU2Graficaci-n.git 
 ## 2.4. Fractales
 Los fractales son estructuras geométricas que presentan autosimilitud, es decir, que sus partes son similares al todo, independientemente de la escala. Estos objetos se generan mediante procesos matemáticos iterativos o recursivos, lo que les permite tener una complejidad prácticamente infinita.
 ## 2.5. Uso y creación de fuentes de texto.
