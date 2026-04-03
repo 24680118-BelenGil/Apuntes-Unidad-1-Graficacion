@@ -286,6 +286,19 @@ Una de las principales ventajas de la representación matricial es la posibilida
 
 Es importante considerar que el orden en el que se multiplican las matrices afecta el resultado final. Por ejemplo, no es lo mismo rotar un objeto y luego trasladarlo, que trasladarlo primero y después rotarlo.
 
+**Ejercicio practico**
+
+[Da click aquí para ver el código](./movivmiento.py)
+
+El código define un operador modal en Python dentro de Blender, el cual permite ejecutar acciones de forma continua mientras escucha eventos del teclado. Este tipo de operador es fundamental en sistemas interactivos, ya que permite modificar objetos en tiempo real.
+
+En primer lugar, se obtiene el objeto llamado "Stroke" dentro de la escena. Si el objeto no existe, el programa finaliza automáticamente. Posteriormente, el método modal detecta cuándo una tecla es presionada y, dependiendo de cuál sea, aplica una transformación sobre el objeto.
+
+Cuando se presionan las flechas izquierda o derecha, se modifica la coordenada X del objeto, lo que produce un desplazamiento horizontal. Por otro lado, cuando se presionan las flechas arriba o abajo, se modifica la coordenada Z, simulando el movimiento vertical en un plano 2D.
+
+Es importante destacar que, aunque Blender trabaja en un entorno tridimensional, en este ejercicio se utilizan únicamente los ejes X y Z para simular un sistema bidimensional. El eje Y se omite, ya que corresponde a la profundidad.
+
+Cada una de estas modificaciones en la posición del objeto equivale a aplicar una transformación de traslación, que matemáticamente se representa como la suma de un vector de desplazamiento a las coordenadas originales del objeto.
 ## 2.3. Trazo de líneas curvas.
 Las curvas son fundamentales en la graficación 2D, ya que permiten representar formas suaves y naturales que no pueden lograrse únicamente con líneas rectas.
 ### 2.3.1. Bézier.
