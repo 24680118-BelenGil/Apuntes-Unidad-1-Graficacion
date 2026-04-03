@@ -200,11 +200,118 @@ Donde:
 * **Transformaciones geométricas:** Las transformaciones geométricas modifican la posición, orientación o tamaño de una imagen sin alterar directamente los valores de color de los píxeles.
 * **Segmentación de imágenes:** Dividir una imagen en regiones o áreas con características similares, como color, textura o intensidad.
 * **Detección de bordes:** Identifica cambios bruscos de intensidad en una imagen. Los bordes representan los límites de los objetos.
-# Bibliografía
+## Bibliografía
 * (N.d.). Wordpress.com. Retrieved February 23, 2026, from https://ingenieriayeducacion.wordpress.com/wp-content/uploads/2013/12/graficosporcomputadorayopengl.pdf
 * La graficación, ___________________________________________________________________ Lección 1. 1-Breve Historia Dde. (n.d.). UNIDAD I.- INTRODUCCIÓN A LA GRAFICACIÓN POR COMPUTADORA. Wordpress.com. Retrieved February 23, 2026, from https://iscitver2011.wordpress.com/wp-content/uploads/2011/02/1-1breve-historia-de-la-graficacion.pdf
 * (N.d.). Wdfiles.com. Retrieved February 23, 2026, from https://aliamondano-eo.wdfiles.com/local--files/libro-graficos-1-0/graficos-1.0.pdf
 * (N.d.-b). Proyectodescartes.org. Retrieved February 23, 2026, from https://proyectodescartes.org/iCartesiLibri/PDF/GraficacionComputadora.pdf
+# Unidad 2. Graficación 2D
+La graficación en dos dimensiones constituye una base fundamental en el campo de la computación gráfica, ya que permite representar objetos en un plano cartesiano mediante el uso de coordenadas (x, y). A través de algoritmos matemáticos y estructuras de datos, es posible manipular, transformar y visualizar figuras geométricas en pantallas digitales.
 
+Este campo es ampliamente utilizado en áreas como:
+* Diseño gráfico
+* Desarrollo de videojuegos
+* Interfaces gráficas (GUI)
+* Animación digital
+* Sistemas CAD
+## 2.1. Transformación bidimensional.
+Operaciones matemáticas que permiten modificar la geometría de un objeto. Estas transformaciones no alteran la estructura interna del objeto (salvo en el caso del escalamiento no uniforme o el sesgado), sino que cambian su posición o apariencia en el plano.
 
+Un objeto en gráficos 2D se representa como un conjunto de puntos o vértices, por lo tanto, cualquier transformación se aplica a cada punto de forma individual.
+### 2.1.1. Traslación.
+La traslación es una transformación que consiste en desplazar un objeto de una posición a otra dentro del plano sin modificar su forma, tamaño ni orientación. Es una de las transformaciones más simples y más utilizadas, ya que representa el movimiento básico de los objetos.
+
+Desde el punto de vista matemático, la traslación se realiza sumando un vector de desplazamiento a las coordenadas originales de cada punto. Esto significa que todos los puntos del objeto se mueven la misma distancia y en la misma dirección.
+
+Es una transformación rígida, lo que significa que:
+* No cambia la forma
+* No cambia el tamaño
+* No altera los ángulos
+
+📌 Forma vectorial:
+
+𝑃′= 𝑃 + 𝑇
+
+Donde:
+
+P = (x, y) y T = (Tx, Ty)
+
+📌 Propiedades:
+* Conserva paralelismo
+* Conserva distancias
+* Es reversible
+### 2.1.2. Escalamiento.
+Transformación que modifica el tamaño de un objeto, este puede alterar las proporciones de la figura dependiendo de los factores utilizados.
+📌 Tipos:
+
+🔹 Escalamiento uniforme
+
+Mantiene proporciones
+
+Sx = Sy
+
+🔹 Escalamiento no uniforme
+
+* Deforma la figura
+* Puede estirar o comprimir
+
+📌 Consideraciones importantes:
+
+Si Sx o Sy < 1 → reducción
+
+Si Sx o Sy > 1 → ampliación
+
+Si es negativo → refleja el objeto
+
+Una consideración importante es que el escalamiento normalmente se realiza respecto al origen del sistema de coordenadas. Sin embargo, si se desea escalar respecto a otro punto, es necesario trasladar el objeto al origen, aplicar el escalamiento y posteriormente regresarlo a su posición original.
+### 2.1.3. Rotación.
+Transformación que permite girar un objeto alrededor de un punto específico, generalmente el origen del sistema de coordenadas. Esta transformación cambia la orientación del objeto, pero no su forma ni su tamaño.
+
+x′=xcosθ−ysinθ
+
+y′=xsinθ+ycosθ​
+
+La rotación depende de un ángulo, que puede medirse en grados o radianes. Un aspecto importante es el sentido de la rotación: si es en sentido antihorario, se considera positiva, mientras que si es en sentido horario, se considera negativa.
+
+Al igual que la traslación, la rotación es una transformación rígida, ya que conserva distancias y ángulos. Sin embargo, su implementación puede ser más compleja, especialmente cuando se rota respecto a un punto distinto del origen, lo cual requiere realizar transformaciones adicionales.
+### 2.1.4. Sesgado.
+Transformación que inclina un objeto en una dirección determinada, provocando una deformación en su forma ya que no conserva los ángulos, por lo que altera la geometría del objeto.
+## 2.2.Representación matricial de las transformaciones bidimensionales.
+En la computación gráfica, las transformaciones se representan comúnmente mediante matrices, ya que esto permite realizar cálculos de forma más eficiente y sistemática.
+
+Para utilizar matrices, se emplea el concepto de coordenadas homogéneas, que consiste en añadir una tercera componente a cada punto. Esto permite representar todas las transformaciones, incluyendo la traslación, como multiplicaciones matriciales.
+
+Una de las principales ventajas de la representación matricial es la posibilidad de combinar múltiples transformaciones en una sola operación. Esto se logra mediante la multiplicación de matrices, lo que facilita la implementación en programas y motores gráficos.
+
+Es importante considerar que el orden en el que se multiplican las matrices afecta el resultado final. Por ejemplo, no es lo mismo rotar un objeto y luego trasladarlo, que trasladarlo primero y después rotarlo.
+
+## 2.3. Trazo de líneas curvas.
+Las curvas son fundamentales en la graficación 2D, ya que permiten representar formas suaves y naturales que no pueden lograrse únicamente con líneas rectas.
+### 2.3.1. Bézier.
+Ampliamente utilizadas en gráficos por computadora debido a su simplicidad y flexibilidad. Estas curvas se definen mediante un conjunto de puntos llamados puntos de control.
+
+📌 Tipos:
+
+* Lineal (2 puntos)
+* Cuadrática (3 puntos)
+* Cúbica (4 puntos, más común)
+
+Una característica importante es que la curva no necesariamente pasa por todos los puntos de control, sino que se aproxima a ellos, lo que permite un mayor control sobre la forma.
+
+Las curvas de Bézier pueden ser lineales, cuadráticas o cúbicas, dependiendo del número de puntos de control. Las cúbicas son las más utilizadas en aplicaciones prácticas, ya que ofrecen un buen equilibrio entre control y complejidad.
+### 2.3.2. B-spline.
+Las curvas B-Spline son una generalización de las curvas de Bézier y ofrecen mayor flexibilidad y control. Una de sus principales ventajas es el control local, lo que significa que modificar un punto de control solo afecta una parte de la curva, en lugar de toda la forma.
+
+## 2.4. Fractales
+Los fractales son estructuras geométricas que presentan autosimilitud, es decir, que sus partes son similares al todo, independientemente de la escala. Estos objetos se generan mediante procesos matemáticos iterativos o recursivos, lo que les permite tener una complejidad prácticamente infinita.
+## 2.5. Uso y creación de fuentes de texto.
+Elementos fundamentales en la representación de texto en sistemas gráficos. Estas fuentes pueden ser de tipo bitmap o vectorial.
+
+Las fuentes bitmap están formadas por píxeles y pueden perder calidad al escalarse, mientras que las fuentes vectoriales se basan en curvas matemáticas, lo que permite escalarlas sin pérdida de calidad.
+
+En la creación de fuentes, se utilizan curvas de Bézier para definir la forma de cada carácter. Además, se consideran aspectos como el espaciado entre letras (kerning) y las métricas de los caracteres.
+## Bibliografía
+* (N.d.). Wordpress.com. Retrieved February 23, 2026, from https://ingenieriayeducacion.wordpress.com/wp-content/uploads/2013/12/graficosporcomputadorayopengl.pdf
+* (N.d.). Wdfiles.com. Retrieved February 23, 2026, from https://aliamondano-eo.wdfiles.com/local--files/libro-graficos-1-0/graficos-1.0.pdf
+* (N.d.-b). Proyectodescartes.org. Retrieved February 23, 2026, from https://proyectodescartes.org/iCartesiLibri/PDF/GraficacionComputadora.pdf
 
